@@ -31,13 +31,20 @@
      </table>
  	  <f:repeatable name="irc_publisher.channels" var="ch" items="${descriptor.defaultTargets}">
 	  	  <table width="100%">
-			<tr>
+			    <tr>
 		  	  	<td width="30%"><input type="text" width="100%" style="text-align:left" name="irc_publisher.channel.name" value="${ch.name}" /></td>
 		  	  	<td width="30%"><input type="password" width="100%" style="text-align:left" name="irc_publisher.channel.password" value="${ch.password}" /></td>
-		  	  	<td width="10%"><f:checkbox name="irc_publisher.chat.notificationOnly" checked="${ch.notificationOnly}"/></td>
+		  	  	<td width="10%">
+            <f:entry name="irc_publisher.chat.notificationOnly" title="Notification Only" field="irc_publisher.chat.notificationOnly">
+            <select name="irc_publisher.chat.notificationOnly">
+                <option value="on">YES</option>
+                <option value="off">NO</option>
+            </select>
+            </f:entry>
+            </td>
 		  	  	<td width="30%">
     		        <div align="right"><f:repeatableDeleteButton /></div>
-                </td>
+            </td>
 	  	  	</tr>
         </table>
 	  	</f:repeatable>
